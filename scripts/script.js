@@ -17,9 +17,15 @@
 
 // How to load in modules
 const Scene = require('Scene');
+const Patches = require('Patches');
 
 // Use export keyword to make a symbol available in scripting debug console
 export const Diagnostics = require('Diagnostics');
+
+var counterNumber = Scene.root.findAll('number');
+var scoreNumber = Patches.getScalarValue('score');
+
+counterNumber.text = scoreNumber.toString();
 
 // To use variables and functions across files, use export/import keyword
 // export const animationDuration = 10;
